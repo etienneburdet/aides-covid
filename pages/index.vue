@@ -1,34 +1,24 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">
-        aides-covid
-      </h1>
-      <h2 class="subtitle">
-        Replication of official app on ODS
-      </h2>
-      <pre>
-        {{ geoData }}
-      </pre>
-    </div>
-  </div>
+  <b-container fluid>
+    <b-row>
+      <b-col lg="4" class="bg-primary">
+        <Graph></Graph>
+      </b-col>
+      <b-col lg="8">
+        <Map></Map>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
-// import axios from 'axios'
-const baseUrL = 'https://eburdet.opendatasoft.com/api/v2/catalog/datasets/no-name/'
+import Map from '~/components/Map.vue'
+import Graph from '~/components/Graph.vue'
 
 export default {
-  data () {
-    return {
-      geoData: 'Salut'
-    }
-  },
-  async asyncData ({ $axios }) {
-    const query = 'exports/geojson'
-    const geoData = await $axios.$get(baseUrL + query)
-    // const geoData = 'Yo'
-    return { geoData }
+  components: {
+    Map,
+    Graph
   }
 }
 </script>
