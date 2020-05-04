@@ -3,6 +3,7 @@ Replaction of https://github.com/etalab/dashboard-aides-entreprises, with data o
 
 ## How to deploy
 ### Vercel
+Exemple: https://aides-covid.etienneburdet.now.sh/
 Create an account on Now.
 Install now CLI
 ```bash
@@ -12,9 +13,13 @@ Deploy
 ```bash
 now
 ```
-
+In the command prompt, replace `npm run build` by `nuxt generate` as a build command when given the opportunity (you can change that from your dashboard)
 ### Netlify
-
+Exemple:
+* Select your related Github repo from the Netlify dashboard
+* Branch: master
+* Build folder: `dist`
+* Deploy command: `nuxt generate`
 ### Github pages
 Generate the static site in dist folder and push subtree to branch gh-pages:
 ```bash
