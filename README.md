@@ -5,7 +5,8 @@ Currently runs in SPA mode only. SSR should work on Netlify and Now (not Github 
 
 ## How to deploy
 ### Vercel (Now)
-Exemple: https://aides-covid.etienneburdet.now.sh/
+Demo: https://aides-covid.etienneburdet.now.sh/
+
 Create an account on Now.
 Install now CLI
 ```bash
@@ -17,12 +18,15 @@ now
 ```
 In the command prompt, replace `npm run build` by `nuxt generate` as a build command when given the opportunity (you can change that from your dashboard)
 ### Netlify
-Exemple: https://fervent-visvesvaraya-c88fc8.netlify.app/
+Demo: https://fervent-visvesvaraya-c88fc8.netlify.app/
+
 * Select your related Github repo from the Netlify dashboard
 * Branch: master
 * Build folder: `dist`
 * Deploy command: `nuxt generate`
 ### Github pages
+Demo: http://etienneburdet.com/aides-covid/
+
 Generate the static site in dist folder and push subtree to branch gh-pages:
 ```bash
 yarn generate
@@ -32,18 +36,14 @@ git subtree push --prefix dist origin gh-pages
 ## Build Setup
 
 ```bash
-# install dependencies
-$ yarn install
+# install
+$ yarn
 
 # serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
+$ yarn/nuxt dev
 
 # generate static project
-$ yarn generate
+$ yarn/nuxt generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
