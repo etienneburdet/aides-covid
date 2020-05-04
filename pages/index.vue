@@ -1,12 +1,11 @@
 <template>
   <b-container fluid>
     <b-row no-gutters>
-      <b-col lg="4" class="bg-primary">
-        {{ sectorData.aggregations }}
-        <Graph></Graph>
+      <b-col lg="4">
+        <Graph :raw-data="sectorData.aggregations" />
       </b-col>
       <b-col lg="8">
-        <Map :geo-data="geoData"></Map>
+        <Map :geo-data="geoData" />
       </b-col>
     </b-row>
   </b-container>

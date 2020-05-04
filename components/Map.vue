@@ -5,7 +5,7 @@
       :map-options="{
         style: 'mapbox://styles/mapbox/light-v10',
         center: [5.3487286616, 46.0997682644],
-        zoom: 3,
+        zoom: 5,
       }"
       @map-load="onLoad"
     />
@@ -52,7 +52,7 @@ export default {
           'text-field': [
             'number-format',
             ['get', 'sum'],
-            { 'min-fraction-digits': 0, 'max-fraction-digits': 0, divider: 1000 }
+            { 'min-fraction-digits': 0, 'max-fraction-digits': 0 }
           ],
           'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
           'text-size': 12
