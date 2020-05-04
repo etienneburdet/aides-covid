@@ -25,7 +25,7 @@ export default {
   async asyncData ({ $axios }) {
     const query = 'exports/geojson'
     const geoData = await $axios.$get(baseUrL + query)
-    console.log('Fetched Data')
+    console.log(geoData.features[0].properties)
     return { geoData }
   },
   data () {

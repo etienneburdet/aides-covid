@@ -29,7 +29,8 @@ export default {
         data: this.geoData,
         cluster: true,
         clusterMaxZoom: 14, // Max zoom to cluster points on
-        clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+        clusterRadius: 50, // Radius of each cluster when clustering points (defaults to 50)
+        clusterProperties: { sum: ['+', ['/', ['get', 'montant_total'], 1000000]] }
       })
 
       map.addLayer({
@@ -47,9 +48,12 @@ export default {
         id: 'cluster-count',
         type: 'symbol',
         source: 'aides',
-        filter: ['has', 'point_count'],
         layout: {
-          'text-field': '{point_count_abbreviated}',
+          'text-field': [
+            'number-format',
+            ['get', 'sum'],
+            { 'min-fraction-digits': 0, 'max-fraction-digits': 0, divider: 1000 }
+          ],
           'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
           'text-size': 12
         }
