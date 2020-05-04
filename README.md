@@ -4,7 +4,7 @@ Replaction of https://github.com/etalab/dashboard-aides-entreprises, with data o
 Currently runs in SPA mode only. SSR should work on Netlify and Now (not Github pages), but Apex doesn't like it for the time being…
 
 ## How to deploy
-### Vercel
+### Vercel (Now)
 Exemple: https://aides-covid.etienneburdet.now.sh/
 Create an account on Now.
 Install now CLI
@@ -17,7 +17,7 @@ now
 ```
 In the command prompt, replace `npm run build` by `nuxt generate` as a build command when given the opportunity (you can change that from your dashboard)
 ### Netlify
-Exemple:
+Exemple: https://fervent-visvesvaraya-c88fc8.netlify.app/
 * Select your related Github repo from the Netlify dashboard
 * Branch: master
 * Build folder: `dist`
