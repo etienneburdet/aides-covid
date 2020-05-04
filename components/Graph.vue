@@ -41,7 +41,7 @@ export default {
       },
       series: [{
         name: 'cumul-aides',
-        data: Array.from(this.rawData, record => record.sum_montant / 1000000)
+        data: Array.from(this.rawData, record => (record.sum_montant / 1000000).toFixed(2))
       }]
     }
   }

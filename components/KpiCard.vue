@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="text-center">
     <p>{{ title }}</p>
-    <h5><strong>{{ kpi }}</strong></h5>
+    <h5><strong>{{ kpi.toLocaleString('fr-FR') }}</strong></h5>
   </div>
 </template>
 
