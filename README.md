@@ -1,6 +1,8 @@
 # aides-covid
 Replaction of https://github.com/etalab/dashboard-aides-entreprises, with data on Opendatasoft platform.
 
+Currently runs in SPA mode only. SSR should work on Netlify and Now (not Github pages), but Apex doesn't like it for the time being…
+
 ## How to deploy
 ### Vercel
 Exemple: https://aides-covid.etienneburdet.now.sh/
