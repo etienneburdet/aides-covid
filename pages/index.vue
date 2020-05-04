@@ -2,6 +2,7 @@
   <b-container fluid>
     <b-row no-gutters>
       <b-col lg="4" class="bg-primary">
+        {{ sectorData.aggregations }}
         <Graph></Graph>
       </b-col>
       <b-col lg="8">
@@ -15,7 +16,7 @@
 import Map from '~/components/Map.vue'
 import Graph from '~/components/Graph.vue'
 
-const baseUrL = 'https://eburdet.opendatasoft.com/api/v2/catalog/datasets/no-name/'
+const baseUrl = 'https://eburdet.opendatasoft.com/api/v2/catalog/datasets/no-name/'
 
 export default {
   components: {
@@ -23,10 +24,13 @@ export default {
     Graph
   },
   async asyncData ({ $axios }) {
-    const query = 'exports/geojson'
-    const geoData = await $axios.$get(baseUrL + query)
-    console.log(geoData.features[0].properties)
-    return { geoData }
+    const queryGeo = 'exports/geojson'
+    const geoData = await $axios.$get(baseUrl + queryGeo)
+
+    const querySector = 'aggregates?select=sum(montant_total) as sum_montant&group_by=libelle_section&sort=-sum_montant&limit=10'
+    const sectorData = await $axios.$get(baseUrl + querySector)
+
+    return { geoData, sectorData }
   },
   data () {
     return {
