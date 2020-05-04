@@ -1,7 +1,27 @@
 # aides-covid
+Replaction of https://github.com/etalab/dashboard-aides-entreprises, with data on Opendatasoft platform.
 
-> Replication of official app on ODS
+## How to deploy
+### Vercel
+Create an account on Now.
+Install now CLI
+```bash
+yarn add global now@latest
+```
+Deploy
+```bash
+now
+```
 
+### Netlify
+
+### Github pages
+Generate the static site in dist folder and push subtree to branch gh-pages:
+```bash
+yarn generate
+git commit -m 'generate static files for deploy'
+git subtree push --prefix dist origin gh-pages
+```
 ## Build Setup
 
 ```bash
