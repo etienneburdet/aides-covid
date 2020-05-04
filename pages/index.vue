@@ -1,6 +1,6 @@
 <template>
   <b-container fluid>
-    <b-row>
+    <b-row no-gutters>
       <b-col lg="4" class="bg-primary">
         <Graph></Graph>
       </b-col>
