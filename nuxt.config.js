@@ -2,9 +2,6 @@ const webpack = require('webpack')
 
 export default {
   mode: 'spa',
-  router: {
-   base: '/aides-covid/'
- },
   /*
   ** Headers of the page
   */
