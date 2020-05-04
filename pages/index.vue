@@ -5,7 +5,7 @@
         <Graph></Graph>
       </b-col>
       <b-col lg="8">
-        <Map></Map>
+        <Map :geo-data="geoData"></Map>
       </b-col>
     </b-row>
   </b-container>
@@ -15,10 +15,23 @@
 import Map from '~/components/Map.vue'
 import Graph from '~/components/Graph.vue'
 
+const baseUrL = 'https://eburdet.opendatasoft.com/api/v2/catalog/datasets/no-name/'
+
 export default {
   components: {
     Map,
     Graph
+  },
+  async asyncData ({ $axios }) {
+    const query = 'exports/geojson'
+    const geoData = await $axios.$get(baseUrL + query)
+    console.log('Fetched Data')
+    return { geoData }
+  },
+  data () {
+    return {
+      geoData: {}
+    }
   }
 }
 </script>

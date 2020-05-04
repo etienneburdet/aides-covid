@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="map-wrapper">
-    {{ geoData }}
     <mapbox
       access-token="pk.eyJ1IjoiZXRpZW5uZWJ1cmRldCIsImEiOiJjazlyZzM3MnUwdHV5M2RueDFnbmlmYmdkIn0.Uu3BD8bRWbyRzP1G5FdeJw"
       :map-options="{
@@ -15,27 +14,15 @@
 
 <script>
 import Mapbox from 'mapbox-gl-vue'
-const baseUrL = 'https://eburdet.opendatasoft.com/api/v2/catalog/datasets/no-name/'
 
 export default {
+  props: ['geoData'],
   components: {
     Mapbox
   },
-  async asyncData ({ $axios }) {
-    // const query = 'exports/geojson'
-    // const geojson = await $axios.$get(baseUrL + query)
-    // console.log('loaded', geojson)
-    // const data = geojson.json()
-    const geoData = 'Yo'
-    return { geoData }
-  },
-  data () {
-    return {
-      geoData: {}
-    }
-  },
   methods: {
     onLoad (map) {
+      console.log('Loaded map', this.geoData)
       map.addSource('aides', {
         type: 'geojson',
         data: this.geoData,
