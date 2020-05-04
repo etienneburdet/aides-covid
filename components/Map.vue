@@ -40,7 +40,7 @@ export default {
         filter: ['has', 'point_count'],
         paint: {
           'circle-color': '#51bbd6',
-          'circle-radius': 30
+          'circle-radius': 40
         }
       })
 
