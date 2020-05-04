@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
   /*
   ** Headers of the page
   */
@@ -63,7 +63,8 @@ export default {
     */
     plugins: [
       new webpack.ProvidePlugin({
-        mapboxgl: 'mapbox-gl'
+        mapboxgl: 'mapbox-gl',
+        apexcharts: 'apexcharts'
       })
     ],
     extend (config, ctx) {
